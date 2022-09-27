@@ -55,12 +55,16 @@ class _MyAppState extends State<MyApp> {
                 statusBarConfig();
                 return MaterialApp(
                   debugShowCheckedModeBanner: false,
-                  onGenerateRoute: widget.appRouter.onGenerateRoute,
                   theme: appTheme,
-                  localizationsDelegates:
-                      translator.delegates, // Android + iOS Delegates
-                  locale: translator.locale, // Active locale
-                  supportedLocales: translator.locals(), // Locals list
+                  localizationsDelegates: translator.delegates,
+                  // Android + iOS Delegates
+                  locale: translator.locale,
+                  // Active locale
+                  supportedLocales: translator.locals(),
+                  //
+                  initialRoute: AppRouterNames.rSplashRoute,
+                  onGenerateRoute:
+                      widget.appRouter.onGenerateRoute, // Locals list
                 );
               });
             },
